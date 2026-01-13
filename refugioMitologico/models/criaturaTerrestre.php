@@ -17,6 +17,6 @@
         public function mostrar(){
             echo "Voladora: <br>";
             parent::mostrar();
-            echo "Envergadura $this->terreno";
+            echo "Terreno $this->terreno";
         }
     }
