@@ -15,7 +15,7 @@
             $this->profundidad=$profundidad;
         }
         public function mostrar(){
-            echo "Profundidad: <br>";
+            echo "Marina: <br>";
             parent::mostrar();
             echo "Profundidad $this->profundidad";
         }
