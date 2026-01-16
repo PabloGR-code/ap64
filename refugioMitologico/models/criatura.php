@@ -28,4 +28,15 @@ class Criatura {
             $this->salud
         ];
     }
+
+    public function setSalud($salud) {
+    $this->salud = $salud;
+    }
+
+    public function setPeligrosidad($peligrosidad) {
+    if ($peligrosidad <= 10) {
+        $this->peligrosidad = $peligrosidad;
+    }
+    }
+
 }
