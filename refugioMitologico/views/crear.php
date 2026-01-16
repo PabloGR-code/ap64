@@ -1,6 +1,6 @@
 <h2>Crear criatura</h2>
 
-<form action="../gestor/gestor.php" method="post">
+<form action="../models/gestor.php" method="post">
     Nombre: <input type="text" name="nombre"><br>
     Especie: <input type="text" name="especie"><br>
     Peligrosidad: <input type="number" name="peligrosidad"><br>
