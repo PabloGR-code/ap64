@@ -10,7 +10,7 @@ $criatura = $criaturas[$id];
 
 <h2>Editar criatura</h2>
 
-<form action="../gestor/gestor.php" method="post">
+<form action="../models/gestor.php" method="post">
     <input type="hidden" name="id" value="<?= $id ?>">
 
     <p>
