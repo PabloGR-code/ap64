@@ -1,5 +1,5 @@
 <?php
-require_once 'Criatura.php';
+require_once 'criatura.php';
 
 class Voladora extends Criatura {
     private $envergadura;
