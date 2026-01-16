@@ -1,5 +1,5 @@
 <?php
-require_once '../controllers/CriaturaController.php';
+require_once '../controllers/criaturaController.php';
 
 $controller = new CriaturaController();
 $criaturas = $controller->listar();
