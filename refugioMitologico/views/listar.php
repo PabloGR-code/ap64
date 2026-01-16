@@ -1,5 +1,4 @@
 <?php
-require_once '../models/criatura.php';
 require_once '../models/criaturaVoladora.php';
 require_once '../models/criaturaMarina.php';
 require_once '../controllers/criaturaController.php';
@@ -11,19 +10,29 @@ $criaturas = $controller->listar();
 <h2>Listado de criaturas</h2>
 
 <?php
-for ($i = 0; $i < count($criaturas); $i++) {
-    $c = $criaturas[$i];
-    echo "<p>";
-    echo implode(" - ", $c->getDatos());
-    echo " | " . $c->hacerSonido();
-    echo "</p>";
+if (empty($criaturas)) {
+    echo "<p>No hay criaturas registradas.</p>";
+} else {
+    for ($i = 0; $i < count($criaturas); $i++) {
 
-    echo "<a href='editar.php?id=$i'>Editar</a> ";
-    echo "<a href='eliminar.php?id=$i'>Eliminar</a>";
-    echo "<hr>";
+        // COMPROBACIÓN CLAVE
+        if (!isset($criaturas[$i]) || $criaturas[$i] === null) {
+            continue;
+        }
+
+        $c = $criaturas[$i];
+
+        echo "<p>";
+        echo implode(" - ", $c->getDatos());
+        echo " | " . $c->hacerSonido();
+        echo "</p>";
+
+        echo "<a href='editar.php?id=$i'>Editar</a> ";
+        echo "<a href='eliminar.php?id=$i'>Eliminar</a>";
+        echo "<hr>";
+    }
 }
 ?>
 
 <br>
 <a href="crear.php">Crear nueva criatura</a>
-
