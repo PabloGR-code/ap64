@@ -1,5 +1,8 @@
 <?php
-require_once '../controllers/CriaturaController.php';
+require_once '../models/criatura.php';
+require_once '../models/criaturaVoladora.php';
+require_once '../models/criaturaMarina.php';
+require_once '../controllers/criaturaController.php';
 
 $controller = new CriaturaController();
 $criaturas = $controller->listar();
