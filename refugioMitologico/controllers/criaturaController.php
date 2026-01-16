@@ -22,10 +22,11 @@ class CriaturaController {
     }
 
     public function editar($id, $salud, $peligrosidad) {
-        if (isset($_SESSION['criaturas'][$id])) {
-            $_SESSION['criaturas'][$id]->salud = $salud;
-            $_SESSION['criaturas'][$id]->peligrosidad = $peligrosidad;
-        }
+    if (isset($_SESSION['criaturas'][$id])) {
+        $_SESSION['criaturas'][$id]->setSalud($salud);
+        $_SESSION['criaturas'][$id]->setPeligrosidad($peligrosidad);
     }
+}
+
 }
 
