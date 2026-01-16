@@ -22,7 +22,7 @@ $criatura = $criaturas[$id];
     </strong>
 </p>
 
-<form action="../gestor/gestor.php" method="post">
+<form action="../models/gestor.php" method="post">
     <input type="hidden" name="id" value="<?= $id ?>">
     <button name="eliminar">Sí, eliminar</button>
 </form>
