@@ -1,7 +1,7 @@
 <?php
-require_once '../controllers/CriaturaController.php';
-require_once '../models/Voladora.php';
-require_once '../models/Marina.php';
+require_once '../controllers/criaturaController.php';
+require_once '../models/criaturaVoladora.php';
+require_once '../models/criaturaMarina.php';
 
 $controller = new CriaturaController();
 
