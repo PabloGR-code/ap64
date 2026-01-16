@@ -12,20 +12,14 @@ $criatura = $criaturas[$id];
 
 <h2>Eliminar criatura</h2>
 
-<p>
-    ¿Seguro que quieres eliminar esta criatura?
-</p>
+<p>¿Seguro que quieres eliminar esta criatura?</p>
 
-<p>
-    <strong>
-        <?= implode(" - ", $criatura->getDatos()) ?>
-    </strong>
-</p>
+<p><strong><?= implode(" - ", $criatura->getDatos()) ?></strong></p>
 
 <form action="../models/gestor.php" method="post">
     <input type="hidden" name="id" value="<?= $id ?>">
-    <button name="eliminar">Sí, eliminar</button>
+    <button type="submit" name="eliminar">Sí, eliminar</button>
 </form>
 
-<br>
 <a href="listar.php">Cancelar</a>
+
