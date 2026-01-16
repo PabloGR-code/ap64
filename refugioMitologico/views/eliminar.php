@@ -1,4 +1,6 @@
 <?php
+require_once '../models/criaturaVoladora.php';
+require_once '../models/criaturaMarina.php';
 require_once '../controllers/criaturaController.php';
 
 $controller = new CriaturaController();
