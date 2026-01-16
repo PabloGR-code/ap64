@@ -17,4 +17,5 @@
     <button name="crear">Crear</button>
 </form>
 
-<a href="listar.php">Ver listado</a>
+<a href="./views/crear.php">Crear criatura</a>
+<a href="./views/listar.php">Listar criaturas</a>
