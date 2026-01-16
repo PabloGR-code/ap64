@@ -1,22 +1,15 @@
 <?php
+require_once 'Criatura.php';
 
-    class marina extends criatura{
+class Marina extends Criatura {
+    private $profundidad;
 
-        protected $profundidad;
-
-        public function __construct ($nombre="",$especie="",$nivel_de_peligrosidad="", $estado_de_salud="",$profundidad="")
-        parent::__construct($nombre. $especie, $nivel_de_peligrosidad,$estado_de_salud)
-        $this->profundidad=$profundidad;
-
-        public function getProfundidad(){
-            return $this->profundidad;
-        }
-        public function setProfundidad(){
-            $this->profundidad=$profundidad;
-        }
-        public function mostrar(){
-            echo "Marina: <br>";
-            parent::mostrar();
-            echo "Profundidad $this->profundidad";
-        }
+    public function __construct($nombre, $especie, $peligrosidad, $salud, $profundidad) {
+        parent::__construct($nombre, $especie, $peligrosidad, $salud);
+        $this->profundidad = $profundidad;
     }
+
+    public function hacerSonido() {
+        return "¡Glub!";
+    }
+}
