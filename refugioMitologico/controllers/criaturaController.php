@@ -12,10 +12,7 @@ class CriaturaController {
     }
 
     public function eliminar($id) {
-    if (isset($_SESSION['criaturas'][$id])) {
         unset($_SESSION['criaturas'][$id]);
-        $_SESSION['criaturas'] = array_values($_SESSION['criaturas']);
-    }
     }
 
     public function editar($id, $salud, $peligrosidad) {

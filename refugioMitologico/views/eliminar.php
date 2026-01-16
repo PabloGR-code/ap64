@@ -22,4 +22,3 @@ $criatura = $criaturas[$id];
 </form>
 
 <a href="listar.php">Cancelar</a>
-
