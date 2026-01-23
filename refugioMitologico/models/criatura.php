@@ -39,4 +39,8 @@ class Criatura {
     }
     }
 
+    public function getNombre() {
+    return $this->nombre;
+}
+
 }
