@@ -1,3 +1,14 @@
+<?php
+require_once 'models/criaturaVoladora.php';
+require_once 'models/criaturaMarina.php';
+require_once 'models/Gestor.php';
+require_once 'controllers/CriaturaController.php';
+
+$gestor = new Gestor();
+
+$controller = new CriaturaController($gestor);
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,3 +28,4 @@
 
 </body>
 </html>
+
