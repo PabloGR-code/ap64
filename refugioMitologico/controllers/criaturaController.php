@@ -1,32 +1,34 @@
 <?php
-require_once __DIR__ . '/../models/criaturaVoladora.php';
-require_once __DIR__ . '/../models/criaturaMarina.php';
 
-session_start();
+require_once __DIR__ . '/../models/CRUDinterface.php';
 
 class CriaturaController {
 
+    private $gestor;
+
+    public function __construct(CRUDinterface $gestor) {
+        $this->gestor = $gestor;
+    }
+
     public function listar() {
-        return $_SESSION['criaturas'] ?? [];
+        return $this->gestor->listar();
     }
 
     public function crear($criatura) {
-        $_SESSION['criaturas'][] = $criatura;
+        $this->gestor->agregar($criatura);
     }
 
     public function eliminar($id) {
-        if (isset($_SESSION['criaturas'][$id])) {
-            unset($_SESSION['criaturas'][$id]);
-            $_SESSION['criaturas'] = array_values($_SESSION['criaturas']);
-        }
+        $this->gestor->eliminar($id);
     }
 
     public function editar($id, $salud, $peligrosidad) {
-    if (isset($_SESSION['criaturas'][$id])) {
-        $_SESSION['criaturas'][$id]->setSalud($salud);
-        $_SESSION['criaturas'][$id]->setPeligrosidad($peligrosidad);
+        $criatura = $this->gestor->obtenerPorId($id);
+
+        if ($criatura !== null) {
+            $criatura->setSalud($salud);
+            $criatura->setPeligrosidad($peligrosidad);
+            $this->gestor->actualizar($id, $criatura);
+        }
     }
 }
-
-}
-
